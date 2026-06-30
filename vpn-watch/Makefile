@@ -1,4 +1,4 @@
-BINARY  = login-watch
+BINARY  = vpn-watch
 PREFIX  = /usr/local
 CFGDIR  = /etc/hartguard
 LOGDIR  = /var/log/hartguard
@@ -7,7 +7,7 @@ build:
 	go build -o $(BINARY) .
 
 test:
-	go test ./internal/... -v
+	go test ./internal/...
 
 clean:
 	rm -f $(BINARY)

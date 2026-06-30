@@ -89,11 +89,29 @@ log_file: logs/host-watch.log
 ========================================
 ```
 
+### Production install (systemd)
+
+```bash
+sudo make install
+sudo systemctl enable --now host-watch
+sudo journalctl -u host-watch -f
+```
+
 ## Running Tests
 
 ```bash
-go test ./internal/checker/...
+make test
 ```
+
+## Makefile targets
+
+| Target | Description |
+|--------|-------------|
+| `make build` | Compile binary |
+| `make test` | Run all tests |
+| `make install` | Install binary, service file, and config |
+| `make uninstall` | Remove all installed files |
+| `make clean` | Remove compiled binary |
 
 ## License
 

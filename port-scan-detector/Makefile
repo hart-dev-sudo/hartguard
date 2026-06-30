@@ -18,7 +18,7 @@ install: build
 	install -d $(CFGDIR)
 	install -d $(LOGDIR)
 	@if [ ! -f $(CFGDIR)/$(BINARY).yaml ]; then \
-		install -m 0644 config.yaml $(CFGDIR)/$(BINARY).yaml; \
+		install -m 0644 config.yaml.example $(CFGDIR)/$(BINARY).yaml; \
 		echo "Config installed to $(CFGDIR)/$(BINARY).yaml — edit before starting service"; \
 	else \
 		echo "Config already exists at $(CFGDIR)/$(BINARY).yaml — skipping"; \

@@ -81,11 +81,29 @@ Log entry (JSON):
 {"timestamp":"2024-01-15T14:31:00Z","event":"LEAK_DETECTED","vpn_container":"gluetun","vpn_ip":"185.213.154.20","container":"qbittorrent","container_ip":"93.184.216.34"}
 ```
 
+### Production install (systemd)
+
+```bash
+sudo make install
+sudo systemctl enable --now vpn-watch
+sudo journalctl -u vpn-watch -f
+```
+
 ## Running Tests
 
 ```bash
-go test ./internal/checker/...
+make test
 ```
+
+## Makefile targets
+
+| Target | Description |
+|--------|-------------|
+| `make build` | Compile binary |
+| `make test` | Run all tests |
+| `make install` | Install binary, service file, and config |
+| `make uninstall` | Remove all installed files |
+| `make clean` | Remove compiled binary |
 
 ## License
 

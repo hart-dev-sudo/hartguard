@@ -1,0 +1,14 @@
+[Unit]
+Description=hartguard vpn-watch — containerized VPN leak detector
+After=network.target docker.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/vpn-watch --config /etc/hartguard/vpn-watch.yaml
+Restart=on-failure
+RestartSec=5s
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
