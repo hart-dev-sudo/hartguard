@@ -1,0 +1,6 @@
+interface: eth0
+threshold: 10
+window: 5
+whitelist:
+  - 127.0.0.1
+log_file: logs/detections.log
