@@ -12,6 +12,7 @@ hartguard is a growing collection of defensive security tools built from scratch
 |------|-------------|--------|
 | [port-scan-detector](./port-scan-detector/) | Detects incoming TCP port scans using a sliding window algorithm — SYN, FIN, NULL, and XMAS | In progress |
 | [vpn-watch](./vpn-watch/) | Monitors containerized VPN setups for IP leaks — verified against any IP-echo endpoint | Available |
+| [host-watch](./host-watch/) | Checks disk, memory, container status, and service reachability in one pass | Available |
 
 ## Structure
 
