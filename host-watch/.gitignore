@@ -1,0 +1,3 @@
+host-watch
+logs/*.log
+*.exe

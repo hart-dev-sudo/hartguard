@@ -1,0 +1,13 @@
+disk_paths:
+  - /
+  - /mnt/media
+disk_warn_percent: 80
+containers:
+  - gluetun
+  - qbittorrent
+  - plex
+service_urls:
+  - name: Plex
+    url: http://localhost:32400/web/index.html
+interval: 300
+log_file: logs/host-watch.log
