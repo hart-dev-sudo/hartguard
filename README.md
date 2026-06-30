@@ -20,9 +20,9 @@ hartguard is a growing collection of defensive security tools built from scratch
 ```
 hartguard/
 ├── port-scan-detector/    # detects incoming port scans
-│   ├── internal/          # detection, sniffing, alerting packages
-│   ├── main.go
-│   └── config.yaml
+├── vpn-watch/             # VPN leak detection
+├── host-watch/            # host health monitoring
+└── login-watch/           # SSH brute force detection
 ```
 
 ## Usage
@@ -31,6 +31,7 @@ Each tool builds and runs standalone:
 
 ```bash
 cd <tool>
+cp config.yaml.example config.yaml   # edit for your system
 go build -o <tool> .
 sudo ./<tool>
 ```
@@ -40,14 +41,15 @@ See each tool's README for full usage and configuration.
 ## Requirements
 
 - Go 1.22+
-- libpcap (`sudo apt install libpcap-dev`)
-- Root or `CAP_NET_RAW` capability for packet capture
+- See each tool's README for additional dependencies
 
 ## Intended Use
 
-These tools are built for defensive monitoring of systems you own and operate. Do not deploy them on networks or systems you do not have explicit permission to monitor. The author assumes no liability for misuse.
+These tools are built for defensive monitoring of systems you own and operate. Do not deploy them on networks or systems you do not have explicit permission to monitor. Unauthorized monitoring may violate the Computer Fraud and Abuse Act (CFAA) and equivalent laws in your jurisdiction.
 
 For testing, pair with [hartkit](https://github.com/hart-dev-sudo/hartkit) against your own lab environment.
+
+The author assumes no liability for misuse of these tools.
 
 ## License
 
