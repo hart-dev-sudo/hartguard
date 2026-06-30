@@ -46,16 +46,30 @@ sudo journalctl -u login-watch -f
 
 ## Configuration
 
-Edit `config.yaml` (or `/etc/hartguard/login-watch.yaml` after `make install`):
+Copy the example config and edit for your system:
+
+```bash
+cp config.yaml.example config.yaml
+```
 
 ```yaml
-auth_log: /var/log/auth.log   # path to auth log
-threshold: 5                   # failures to trigger alert
-window: 60                     # time window in seconds
+auth_log: /var/log/auth.log   # Ubuntu/Debian; Fedora/RHEL use /var/log/secure
+threshold: 5                  # failures within window to trigger alert
+window: 60                    # sliding window size in seconds
 whitelist:
   - 127.0.0.1
 log_file: logs/login-watch.log
 ```
+
+**Auth log path by distro:**
+
+| Distro | Path |
+|--------|------|
+| Ubuntu / Debian | `/var/log/auth.log` |
+| Fedora / RHEL / CentOS | `/var/log/secure` |
+| Arch Linux | `/var/log/auth.log` or use `journalctl` |
+
+After `make install`, config lives at `/etc/hartguard/login-watch.yaml`.
 
 ## Usage
 

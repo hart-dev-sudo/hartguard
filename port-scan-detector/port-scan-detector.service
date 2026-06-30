@@ -1,0 +1,14 @@
+[Unit]
+Description=hartguard port-scan-detector — network port scan detector
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/port-scan-detector --config /etc/hartguard/port-scan-detector.yaml
+Restart=on-failure
+RestartSec=5s
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

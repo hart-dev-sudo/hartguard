@@ -1,0 +1,11 @@
+disk_paths:
+  - /                         # always check root
+  - /mnt/data                 # add your mount points
+disk_warn_percent: 80
+containers:
+  - my-container              # Docker container names to check
+service_urls:
+  - name: My Service
+    url: http://localhost:8080/health  # HTTP endpoints to probe
+interval: 300                 # seconds between checks
+log_file: logs/host-watch.log

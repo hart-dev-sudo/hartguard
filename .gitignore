@@ -1,0 +1,12 @@
+# Local configs contain machine-specific settings (interface names, paths, containers)
+# Edit config.yaml after cloning — do not commit personal values
+**/config.yaml
+
+# Build artifacts
+port-scan-detector/port-scan-detector
+vpn-watch/vpn-watch
+host-watch/host-watch
+login-watch/login-watch
+
+# Log output
+**/logs/

@@ -1,0 +1,6 @@
+auth_log: /var/log/auth.log   # Ubuntu/Debian default; Fedora/RHEL use /var/log/secure
+threshold: 5                  # failures within the window to trigger an alert
+window: 60                    # sliding window size in seconds
+whitelist:
+  - 127.0.0.1                 # IPs to never alert on
+log_file: logs/login-watch.log

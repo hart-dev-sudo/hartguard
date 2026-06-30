@@ -1,0 +1,6 @@
+interface: eth0        # find yours: ip addr show — look for state UP with your local IP
+threshold: 10          # unique ports within the window to trigger an alert
+window: 5              # sliding window size in seconds
+whitelist:
+  - 127.0.0.1          # IPs to never alert on
+log_file: logs/detections.log

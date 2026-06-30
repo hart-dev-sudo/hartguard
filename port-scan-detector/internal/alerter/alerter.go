@@ -19,7 +19,11 @@ type logEntry struct {
 	PortCount int      `json:"port_count"`
 }
 
-// Alerter consumes alerts from the detector and writes them to stdout and a log file
+const (
+	colorRed   = "\033[31m"
+	colorReset = "\033[0m"
+)
+
 type Alerter struct {
 	logger *log.Logger
 }
@@ -49,7 +53,7 @@ func (a *Alerter) Run(alerts <-chan detector.Alert) {
 		b, _ := json.Marshal(entry)
 		a.logger.Println(string(b))
 
-		fmt.Printf("[ALERT] %s scan from %s | %d ports hit: %v\n",
-			alert.ScanType, alert.SrcIP, len(alert.Ports), alert.Ports)
+		fmt.Printf("%s[ALERT]%s %s scan from %s | %d ports hit: %v\n",
+			colorRed, colorReset, alert.ScanType, alert.SrcIP, len(alert.Ports), alert.Ports)
 	}
 }

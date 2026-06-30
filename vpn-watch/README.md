@@ -35,16 +35,22 @@ go build -o vpn-watch .
 
 ## Configuration
 
-Edit `config.yaml`:
+Copy the example config and edit for your system:
+
+```bash
+cp config.yaml.example config.yaml
+```
 
 ```yaml
-vpn_container: gluetun       # your VPN container name
+vpn_container: my-vpn         # name of your VPN container (e.g. gluetun, wireguard)
 check_containers:
-  - qbittorrent              # containers that must route through VPN
+  - my-app                    # containers that must route through VPN
 check_url: https://api.ipify.org  # any IP-echo endpoint
-interval: 60                 # seconds between checks (0 = one-shot)
+interval: 60                  # seconds between checks
 log_file: logs/vpn-watch.log
 ```
+
+**Finding your container names:** Run `docker ps --format '{{.Names}}'` to list running containers.
 
 ## Usage
 

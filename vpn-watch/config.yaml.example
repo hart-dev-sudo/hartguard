@@ -1,0 +1,6 @@
+vpn_container: my-vpn         # name of your VPN container (e.g. gluetun, wireguard, openvpn)
+check_containers:
+  - my-app                    # containers that must route traffic through the VPN
+check_url: https://api.ipify.org  # any IP-echo endpoint
+interval: 60                  # seconds between checks
+log_file: logs/vpn-watch.log

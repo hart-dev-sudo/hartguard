@@ -33,22 +33,27 @@ go build -o host-watch .
 
 ## Configuration
 
-Edit `config.yaml`:
+Copy the example config and edit for your system:
+
+```bash
+cp config.yaml.example config.yaml
+```
 
 ```yaml
 disk_paths:
-  - /
-  - /mnt/data
+  - /                         # always check root
+  - /mnt/data                 # add your mount points
 disk_warn_percent: 80
 containers:
-  - nginx
-  - postgres
+  - my-container              # Docker container names to check
 service_urls:
-  - name: My App
+  - name: My Service
     url: http://localhost:8080/health
-interval: 300        # seconds between checks (0 = one-shot)
+interval: 300
 log_file: logs/host-watch.log
 ```
+
+**Finding your mount points:** Run `df -h` to list mounted filesystems. **Finding container names:** Run `docker ps --format '{{.Names}}'`.
 
 ## Usage
 

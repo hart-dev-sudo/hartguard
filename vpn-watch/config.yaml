@@ -1,6 +1,0 @@
-vpn_container: gluetun
-check_containers:
-  - qbittorrent
-check_url: https://api.ipify.org
-interval: 60
-log_file: logs/vpn-watch.log

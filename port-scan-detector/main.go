@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 	"os"
 
@@ -57,8 +58,11 @@ func main() {
 		cfg.Window = *window
 	}
 
-	log.Printf("Starting port-scan-detector | interface=%s threshold=%d window=%ds",
-		cfg.Interface, cfg.Threshold, cfg.Window)
+	fmt.Println("========================================")
+	fmt.Printf("  port-scan-detector\n")
+	fmt.Printf("  interface: %s\n", cfg.Interface)
+	fmt.Printf("  threshold: %d unique ports in %ds\n", cfg.Threshold, cfg.Window)
+	fmt.Println("========================================")
 
 	det := detector.New(cfg.Threshold, cfg.Window, cfg.Whitelist)
 

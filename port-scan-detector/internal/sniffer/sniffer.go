@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/hart-dev-sudo/hartguard/port-scan-detector/internal/detector"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 	"github.com/google/gopacket/pcap"
+	"github.com/hart-dev-sudo/hartguard/port-scan-detector/internal/detector"
 )
 
 type Sniffer struct {
@@ -34,22 +34,24 @@ func (s *Sniffer) Start() error {
 
 	src := gopacket.NewPacketSource(handle, handle.LinkType())
 	for packet := range src.Packets() {
-		s.processPacket(packet)
+		if srcIP, dstPort, flags, ok := parsePacket(packet); ok {
+			s.detector.Process(srcIP, dstPort, flags)
+		}
 	}
 	return nil
 }
 
-func (s *Sniffer) processPacket(packet gopacket.Packet) {
+// parsePacket extracts src IP, dst port, and TCP flags from a packet.
+// Returns ok=false if the packet is not an IPv4 TCP packet.
+func parsePacket(packet gopacket.Packet) (srcIP string, dstPort uint16, flags uint16, ok bool) {
 	ipLayer := packet.Layer(layers.LayerTypeIPv4)
 	tcpLayer := packet.Layer(layers.LayerTypeTCP)
 	if ipLayer == nil || tcpLayer == nil {
-		return
+		return "", 0, 0, false
 	}
-
 	ip := ipLayer.(*layers.IPv4)
 	tcp := tcpLayer.(*layers.TCP)
-
-	s.detector.Process(ip.SrcIP.String(), uint16(tcp.DstPort), tcpFlags(tcp))
+	return ip.SrcIP.String(), uint16(tcp.DstPort), tcpFlags(tcp), true
 }
 
 func tcpFlags(tcp *layers.TCP) uint16 {
