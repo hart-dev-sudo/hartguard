@@ -1,4 +1,4 @@
-module github.com/chrishartserver/hartguard/vpn-watch
+module github.com/hart-dev-sudo/hartguard/vpn-watch
 
 go 1.22.2
 

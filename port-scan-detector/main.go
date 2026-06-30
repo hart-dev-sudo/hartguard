@@ -7,9 +7,9 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/chrishartserver/linux-security-suite/port-scan-detector/internal/alerter"
-	"github.com/chrishartserver/linux-security-suite/port-scan-detector/internal/detector"
-	"github.com/chrishartserver/linux-security-suite/port-scan-detector/internal/sniffer"
+	"github.com/hart-dev-sudo/hartguard/port-scan-detector/internal/alerter"
+	"github.com/hart-dev-sudo/hartguard/port-scan-detector/internal/detector"
+	"github.com/hart-dev-sudo/hartguard/port-scan-detector/internal/sniffer"
 )
 
 type Config struct {

@@ -9,8 +9,8 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/chrishartserver/hartguard/host-watch/internal/alerter"
-	"github.com/chrishartserver/hartguard/host-watch/internal/checker"
+	"github.com/hart-dev-sudo/hartguard/host-watch/internal/alerter"
+	"github.com/hart-dev-sudo/hartguard/host-watch/internal/checker"
 )
 
 type ServiceURL struct {

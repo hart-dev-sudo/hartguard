@@ -1,4 +1,4 @@
-module github.com/chrishartserver/linux-security-suite/port-scan-detector
+module github.com/hart-dev-sudo/hartguard/port-scan-detector
 
 go 1.22.2
 

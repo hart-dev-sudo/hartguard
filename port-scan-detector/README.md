@@ -2,7 +2,7 @@
 
 A lightweight network port scan detector written in Go. Listens on a network interface, tracks incoming TCP connections per source IP using a sliding time window, and fires an alert when a single IP hits enough unique ports to indicate a scan.
 
-Part of the [linux-security-suite](../) — blue team tooling for Linux servers.
+Part of the [hartguard](../) — blue team tooling for Linux servers.
 
 ## Features
 
@@ -31,8 +31,8 @@ Part of the [linux-security-suite](../) — blue team tooling for Linux servers.
 ## Installation
 
 ```bash
-git clone https://github.com/chrishartserver/linux-security-suite.git
-cd linux-security-suite/port-scan-detector
+git clone https://github.com/chrishartserver/hartguard.git
+cd hartguard/port-scan-detector
 go build -o port-scan-detector .
 ```
 

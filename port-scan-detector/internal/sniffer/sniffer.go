@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/chrishartserver/linux-security-suite/port-scan-detector/internal/detector"
+	"github.com/hart-dev-sudo/hartguard/port-scan-detector/internal/detector"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 	"github.com/google/gopacket/pcap"

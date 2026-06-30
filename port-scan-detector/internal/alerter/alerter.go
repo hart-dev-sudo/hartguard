@@ -8,7 +8,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/chrishartserver/linux-security-suite/port-scan-detector/internal/detector"
+	"github.com/hart-dev-sudo/hartguard/port-scan-detector/internal/detector"
 )
 
 type logEntry struct {

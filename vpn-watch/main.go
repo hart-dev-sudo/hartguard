@@ -9,8 +9,8 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/chrishartserver/hartguard/vpn-watch/internal/alerter"
-	"github.com/chrishartserver/hartguard/vpn-watch/internal/checker"
+	"github.com/hart-dev-sudo/hartguard/vpn-watch/internal/alerter"
+	"github.com/hart-dev-sudo/hartguard/vpn-watch/internal/checker"
 )
 
 type Config struct {

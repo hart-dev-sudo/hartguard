@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/chrishartserver/hartguard/host-watch/internal/checker"
+	"github.com/hart-dev-sudo/hartguard/host-watch/internal/checker"
 )
 
 type logEntry struct {

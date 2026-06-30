@@ -1,4 +1,4 @@
-module github.com/chrishartserver/hartguard/host-watch
+module github.com/hart-dev-sudo/hartguard/host-watch
 
 go 1.22.2
 

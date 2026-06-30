@@ -1,0 +1,6 @@
+auth_log: /var/log/auth.log
+threshold: 5
+window: 60
+whitelist:
+  - 127.0.0.1
+log_file: logs/login-watch.log
